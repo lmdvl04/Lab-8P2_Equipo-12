@@ -8,12 +8,12 @@ public class SerVivo {
     private int poder;
     private String anio;
     private Universo universe;
-    private boolean raza;
+    private String raza;
 
     public SerVivo() {
     }
 
-    public SerVivo(String nombre, int id, int poder, String anio, Universo universe, boolean raza) {
+    public SerVivo(String nombre, int id, int poder, String anio, Universo universe, String raza) {
         this.nombre = nombre;
         this.id = id;
         this.poder = poder;
@@ -62,11 +62,11 @@ public class SerVivo {
         this.universe = universe;
     }
 
-    public boolean isRaza() {
+    public String isRaza() {
         return raza;
     }
 
-    public void setRaza(boolean raza) {
+    public void setRaza(String raza) {
         this.raza = raza;
     }
 
