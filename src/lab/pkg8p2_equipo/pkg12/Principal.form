@@ -228,6 +228,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Agregar Ser Vivo"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="button_SerVivoAgregarMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="button_SerVivoModificar">
               <Properties>

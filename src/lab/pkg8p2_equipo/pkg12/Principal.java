@@ -161,6 +161,11 @@ public class Principal extends javax.swing.JFrame {
 
         button_SerVivoAgregar.setBackground(new java.awt.Color(255, 255, 204));
         button_SerVivoAgregar.setText("Agregar Ser Vivo");
+        button_SerVivoAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_SerVivoAgregarMouseClicked(evt);
+            }
+        });
 
         button_SerVivoModificar.setBackground(new java.awt.Color(255, 255, 204));
         button_SerVivoModificar.setText("Agregar Modificar");
@@ -447,6 +452,13 @@ public class Principal extends javax.swing.JFrame {
         } catch (Exception e) {
         }
     }//GEN-LAST:event_JB_AgregarfinalUniMouseClicked
+
+    private void button_SerVivoAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_SerVivoAgregarMouseClicked
+        frame_DanielSeres.setVisible(false);
+        frame_DanielAgregar.setVisible(true);
+        frame_DanielAgregar.pack();
+        frame_DanielAgregar.setLocationRelativeTo(this);
+    }//GEN-LAST:event_button_SerVivoAgregarMouseClicked
 
     /**
      * @param args the command line arguments
