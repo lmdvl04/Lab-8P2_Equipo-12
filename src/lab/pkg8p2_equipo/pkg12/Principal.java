@@ -27,7 +27,31 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        frame_DanielSeres = new javax.swing.JFrame();
+        frame_LisaUniverso = new javax.swing.JFrame();
         jPanel1 = new javax.swing.JPanel();
+
+        javax.swing.GroupLayout frame_DanielSeresLayout = new javax.swing.GroupLayout(frame_DanielSeres.getContentPane());
+        frame_DanielSeres.getContentPane().setLayout(frame_DanielSeresLayout);
+        frame_DanielSeresLayout.setHorizontalGroup(
+            frame_DanielSeresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        frame_DanielSeresLayout.setVerticalGroup(
+            frame_DanielSeresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout frame_LisaUniversoLayout = new javax.swing.GroupLayout(frame_LisaUniverso.getContentPane());
+        frame_LisaUniverso.getContentPane().setLayout(frame_LisaUniversoLayout);
+        frame_LisaUniversoLayout.setHorizontalGroup(
+            frame_LisaUniversoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        frame_LisaUniversoLayout.setVerticalGroup(
+            frame_LisaUniversoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,7 +65,7 @@ public class Principal extends javax.swing.JFrame {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 620, Short.MAX_VALUE)
+            .addGap(0, 434, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -94,6 +118,8 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JFrame frame_DanielSeres;
+    private javax.swing.JFrame frame_LisaUniverso;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
