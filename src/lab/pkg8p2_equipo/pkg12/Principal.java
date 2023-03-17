@@ -651,21 +651,34 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jPanel7.setBackground(new java.awt.Color(102, 153, 255));
+<<<<<<< HEAD
 
         jLabel21.setFont(new java.awt.Font("OCR A Extended", 0, 24)); // NOI18N
         jLabel21.setText("Modificar Universo");
         jPanel7.add(jLabel21);
+=======
+        jPanel7.setPreferredSize(new java.awt.Dimension(520, 440));
+
+        jLabel21.setFont(new java.awt.Font("OCR A Extended", 0, 24)); // NOI18N
+        jLabel21.setText("Modificar Universo");
+>>>>>>> f560b4dfe75f9d010ebca64b55c82c89222d3590
 
         TF_NombreModificarUni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
         jPanel7.add(TF_NombreModificarUni);
 
         jLabel22.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
         jLabel22.setText("Escoja el Universo");
+<<<<<<< HEAD
         jPanel7.add(jLabel22);
 
         jLabel23.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
         jLabel23.setText("Nombre");
         jPanel7.add(jLabel23);
+=======
+
+        jLabel23.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
+        jLabel23.setText("Nombre");
+>>>>>>> f560b4dfe75f9d010ebca64b55c82c89222d3590
 
         CB_ModificarUni.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -688,13 +701,67 @@ public class Principal extends javax.swing.JFrame {
                 JB_ModificarUniFinalMouseClicked(evt);
             }
         });
+<<<<<<< HEAD
         jPanel7.add(JB_ModificarUniFinal);
+=======
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel7Layout.createSequentialGroup()
+                            .addGap(22, 22, 22)
+                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel22)
+                                .addGroup(jPanel7Layout.createSequentialGroup()
+                                    .addGap(6, 6, 6)
+                                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel23)
+                                        .addComponent(CB_ModificarUni, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGroup(jPanel7Layout.createSequentialGroup()
+                            .addGap(127, 127, 127)
+                            .addComponent(jLabel21))
+                        .addGroup(jPanel7Layout.createSequentialGroup()
+                            .addGap(386, 386, 386)
+                            .addComponent(JB_ModificarUniFinal)))
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(JB_AtrasModUni)
+                        .addComponent(TF_NombreModificarUni, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(390, 390, 390))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(jLabel21)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel22)
+                .addGap(12, 12, 12)
+                .addComponent(CB_ModificarUni, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel23)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TF_NombreModificarUni, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JB_ModificarUniFinal)
+                    .addComponent(JB_AtrasModUni))
+                .addGap(122, 122, 122))
+        );
+>>>>>>> f560b4dfe75f9d010ebca64b55c82c89222d3590
 
         javax.swing.GroupLayout frame_LisaModUniversoLayout = new javax.swing.GroupLayout(frame_LisaModUniverso.getContentPane());
         frame_LisaModUniverso.getContentPane().setLayout(frame_LisaModUniversoLayout);
         frame_LisaModUniversoLayout.setHorizontalGroup(
             frame_LisaModUniversoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+<<<<<<< HEAD
             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+=======
+            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 520, Short.MAX_VALUE)
+>>>>>>> f560b4dfe75f9d010ebca64b55c82c89222d3590
         );
         frame_LisaModUniversoLayout.setVerticalGroup(
             frame_LisaModUniversoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -828,9 +895,10 @@ public class Principal extends javax.swing.JFrame {
 
     private void JB_ModUniversoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_ModUniversoMouseClicked
         frame_LisaUniverso.setVisible(false);
-        frame_LisaModUniverso.setVisible(true);
+        
         frame_LisaModUniverso.pack();
         frame_LisaModUniverso.setLocationRelativeTo(this);
+        frame_LisaModUniverso.setVisible(true);
         llenarcomboUniverso();
     }//GEN-LAST:event_JB_ModUniversoMouseClicked
 
