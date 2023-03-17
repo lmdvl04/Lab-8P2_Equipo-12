@@ -8,6 +8,8 @@ import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.YES_NO_OPTION;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -105,6 +107,13 @@ public class Principal extends javax.swing.JFrame {
         CB_ModificarUni = new javax.swing.JComboBox<>();
         JB_AtrasModUni = new javax.swing.JButton();
         JB_ModificarUniFinal = new javax.swing.JButton();
+        JF_EliminarUni = new javax.swing.JFrame();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel24 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        JT_Eliminar = new javax.swing.JTable();
+        JB_EliminarFinalUni = new javax.swing.JButton();
+        JB_AtrasEliminarUni = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         JB_Servivo = new javax.swing.JButton();
@@ -352,6 +361,11 @@ public class Principal extends javax.swing.JFrame {
 
         button_agregarSerVivo.setBackground(new java.awt.Color(255, 255, 204));
         button_agregarSerVivo.setText("OK");
+        button_agregarSerVivo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_agregarSerVivoMouseClicked(evt);
+            }
+        });
 
         button_modificarSerVivo.setBackground(new java.awt.Color(255, 255, 204));
         button_modificarSerVivo.setText("VOLVER");
@@ -528,9 +542,19 @@ public class Principal extends javax.swing.JFrame {
 
         JB_EliminarUni.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
         JB_EliminarUni.setText("Eliminar");
+        JB_EliminarUni.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_EliminarUniMouseClicked(evt);
+            }
+        });
 
         JB_AtrasCrudUni.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
         JB_AtrasCrudUni.setText("Atras");
+        JB_AtrasCrudUni.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_AtrasCrudUniMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -735,11 +759,88 @@ public class Principal extends javax.swing.JFrame {
         frame_LisaModUniverso.getContentPane().setLayout(frame_LisaModUniversoLayout);
         frame_LisaModUniversoLayout.setHorizontalGroup(
             frame_LisaModUniversoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 520, Short.MAX_VALUE)
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
         );
         frame_LisaModUniversoLayout.setVerticalGroup(
             frame_LisaModUniversoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jPanel9.setBackground(new java.awt.Color(102, 153, 255));
+
+        jLabel24.setFont(new java.awt.Font("OCR A Extended", 0, 24)); // NOI18N
+        jLabel24.setText("Eliminar Universo");
+
+        JT_Eliminar.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null},
+                {null},
+                {null},
+                {null}
+            },
+            new String [] {
+                "Nombre"
+            }
+        ));
+        jScrollPane1.setViewportView(JT_Eliminar);
+
+        JB_EliminarFinalUni.setText("Eliminar");
+        JB_EliminarFinalUni.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_EliminarFinalUniMouseClicked(evt);
+            }
+        });
+
+        JB_AtrasEliminarUni.setText("Atras");
+        JB_AtrasEliminarUni.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_AtrasEliminarUniMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(135, 135, 135)
+                .addComponent(jLabel24)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addContainerGap(36, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(JB_AtrasEliminarUni)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(JB_EliminarFinalUni)))
+                .addGap(45, 45, 45))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JB_EliminarFinalUni)
+                    .addComponent(JB_AtrasEliminarUni))
+                .addContainerGap(94, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout JF_EliminarUniLayout = new javax.swing.GroupLayout(JF_EliminarUni.getContentPane());
+        JF_EliminarUni.getContentPane().setLayout(JF_EliminarUniLayout);
+        JF_EliminarUniLayout.setHorizontalGroup(
+            JF_EliminarUniLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        JF_EliminarUniLayout.setVerticalGroup(
+            JF_EliminarUniLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -914,6 +1015,45 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CB_ModificarUniItemStateChanged
 
+    private void JB_EliminarUniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_EliminarUniMouseClicked
+        frame_LisaUniverso.setVisible(false);
+        
+        JF_EliminarUni.pack();
+        JF_EliminarUni.setLocationRelativeTo(this);
+        JF_EliminarUni.setVisible(true);
+        listarTabla();
+    }//GEN-LAST:event_JB_EliminarUniMouseClicked
+
+    private void JB_AtrasCrudUniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AtrasCrudUniMouseClicked
+        frame_LisaUniverso.setVisible(false);
+        this.setVisible(true);
+ 
+    }//GEN-LAST:event_JB_AtrasCrudUniMouseClicked
+
+    private void JB_AtrasEliminarUniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AtrasEliminarUniMouseClicked
+       JF_EliminarUni.setVisible(false);
+        frame_LisaUniverso.setVisible(true);
+        frame_LisaUniverso.pack();
+        frame_LisaUniverso.setLocationRelativeTo(this);
+    }//GEN-LAST:event_JB_AtrasEliminarUniMouseClicked
+
+    private void JB_EliminarFinalUniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_EliminarFinalUniMouseClicked
+              if (JT_Eliminar.getSelectedRow() >= 0) {
+            int r = JOptionPane.showConfirmDialog(JT_Eliminar, "Desea elimnar Universo????", "Eliminar Universo", YES_NO_OPTION);
+            if (r == 0) {
+                uni.remove(JT_Eliminar.getSelectedRow());
+                listarTabla();
+                JOptionPane.showMessageDialog(this, "Universo Eliminado exitosamente");
+
+            }
+
+        }
+    }//GEN-LAST:event_JB_EliminarFinalUniMouseClicked
+
+    private void button_agregarSerVivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_agregarSerVivoMouseClicked
+       
+    }//GEN-LAST:event_button_agregarSerVivoMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -959,6 +1099,26 @@ public class Principal extends javax.swing.JFrame {
 
         }
     }
+    private void listarTabla() {
+        try {
+
+            //limpiar tabla
+            JT_Eliminar.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{
+                "Nombre"}));
+
+            // TODO add your handling code here:
+            for (Universo t : uni) {
+                    Object[] row = {t.getNombre()};
+                    DefaultTableModel modelo = (DefaultTableModel) JT_Eliminar.getModel();
+                    modelo.addRow(row);
+                    JT_Eliminar.setModel(modelo);
+                
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CB_ModificarUni;
@@ -966,7 +1126,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton JB_AnadirUni;
     private javax.swing.JButton JB_AtrasAgregarUni;
     private javax.swing.JButton JB_AtrasCrudUni;
+    private javax.swing.JButton JB_AtrasEliminarUni;
     private javax.swing.JButton JB_AtrasModUni;
+    private javax.swing.JButton JB_EliminarFinalUni;
     private javax.swing.JButton JB_EliminarUni;
     private javax.swing.JButton JB_Guardar;
     private javax.swing.JButton JB_ModUniverso;
@@ -974,6 +1136,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton JB_Salir;
     private javax.swing.JButton JB_Servivo;
     private javax.swing.JButton JB_Universo;
+    private javax.swing.JFrame JF_EliminarUni;
+    private javax.swing.JTable JT_Eliminar;
     private javax.swing.JTextField TF_NombreAgregarUni;
     private javax.swing.JTextField TF_NombreModificarUni;
     private javax.swing.JButton button_SerVivoAgregar;
@@ -1019,6 +1183,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel35;
@@ -1036,6 +1201,8 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner spinner_SerVivoPoder;
     private javax.swing.JSpinner spinner_SerVivoPodermod;
     private javax.swing.JTextField textfield_SerVivoNombre;
