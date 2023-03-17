@@ -97,11 +97,11 @@ public class Principal extends javax.swing.JFrame {
         JB_AgregarfinalUni = new javax.swing.JButton();
         JB_AtrasAgregarUni = new javax.swing.JButton();
         frame_LisaModUniverso = new javax.swing.JFrame();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel21 = new javax.swing.JLabel();
         TF_NombreModificarUni = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
         CB_ModificarUni = new javax.swing.JComboBox<>();
         JB_AtrasModUni = new javax.swing.JButton();
         JB_ModificarUniFinal = new javax.swing.JButton();
@@ -650,18 +650,19 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel6.setBackground(new java.awt.Color(102, 153, 255));
+        jPanel7.setBackground(new java.awt.Color(102, 153, 255));
+        jPanel7.setPreferredSize(new java.awt.Dimension(520, 440));
 
-        jLabel11.setFont(new java.awt.Font("OCR A Extended", 0, 24)); // NOI18N
-        jLabel11.setText("Modificar Universo");
+        jLabel21.setFont(new java.awt.Font("OCR A Extended", 0, 24)); // NOI18N
+        jLabel21.setText("Modificar Universo");
 
         TF_NombreModificarUni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
 
-        jLabel12.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        jLabel12.setText("Escoja el Universo");
+        jLabel22.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
+        jLabel22.setText("Escoja el Universo");
 
-        jLabel13.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        jLabel13.setText("Nombre");
+        jLabel23.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
+        jLabel23.setText("Nombre");
 
         CB_ModificarUni.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -683,58 +684,62 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(126, 126, 126)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CB_ModificarUni, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(jPanel6Layout.createSequentialGroup()
-                                    .addComponent(JB_AtrasModUni)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(JB_ModificarUniFinal))
-                                .addComponent(TF_NombreModificarUni, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(48, Short.MAX_VALUE))
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel7Layout.createSequentialGroup()
+                            .addGap(22, 22, 22)
+                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel22)
+                                .addGroup(jPanel7Layout.createSequentialGroup()
+                                    .addGap(6, 6, 6)
+                                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel23)
+                                        .addComponent(CB_ModificarUni, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGroup(jPanel7Layout.createSequentialGroup()
+                            .addGap(127, 127, 127)
+                            .addComponent(jLabel21))
+                        .addGroup(jPanel7Layout.createSequentialGroup()
+                            .addGap(386, 386, 386)
+                            .addComponent(JB_ModificarUniFinal)))
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(JB_AtrasModUni)
+                        .addComponent(TF_NombreModificarUni, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(390, 390, 390))
         );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addComponent(jLabel21)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel22)
+                .addGap(12, 12, 12)
+                .addComponent(CB_ModificarUni, javax.swing.GroupLayout.DEFAULT_SIZE, 42, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel23)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CB_ModificarUni, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TF_NombreModificarUni, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JB_AtrasModUni)
-                    .addComponent(JB_ModificarUniFinal))
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addComponent(TF_NombreModificarUni, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JB_ModificarUniFinal)
+                    .addComponent(JB_AtrasModUni))
+                .addGap(122, 122, 122))
         );
 
         javax.swing.GroupLayout frame_LisaModUniversoLayout = new javax.swing.GroupLayout(frame_LisaModUniverso.getContentPane());
         frame_LisaModUniverso.getContentPane().setLayout(frame_LisaModUniversoLayout);
         frame_LisaModUniversoLayout.setHorizontalGroup(
             frame_LisaModUniversoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 520, Short.MAX_VALUE)
         );
         frame_LisaModUniversoLayout.setVerticalGroup(
             frame_LisaModUniversoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -864,9 +869,10 @@ public class Principal extends javax.swing.JFrame {
 
     private void JB_ModUniversoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_ModUniversoMouseClicked
         frame_LisaUniverso.setVisible(false);
-        frame_LisaModUniverso.setVisible(true);
+        
         frame_LisaModUniverso.pack();
         frame_LisaModUniverso.setLocationRelativeTo(this);
+        frame_LisaModUniverso.setVisible(true);
         llenarcomboUniverso();
     }//GEN-LAST:event_JB_ModUniversoMouseClicked
 
@@ -1002,17 +1008,17 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-<<<<<<< HEAD
-=======
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
->>>>>>> 7473d398aa93fa1727ceb3753a675631fafb1436
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel35;
@@ -1028,13 +1034,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-<<<<<<< HEAD
-    private javax.swing.JSpinner jSpinner1;
-=======
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JSpinner spinner_SerVivoPoder;
     private javax.swing.JSpinner spinner_SerVivoPodermod;
->>>>>>> 7473d398aa93fa1727ceb3753a675631fafb1436
     private javax.swing.JTextField textfield_SerVivoNombre;
     private javax.swing.JTextField textfield_SerVivoNombremod;
     // End of variables declaration//GEN-END:variables
