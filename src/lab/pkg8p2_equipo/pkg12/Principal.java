@@ -5,7 +5,9 @@
 package lab.pkg8p2_equipo.pkg12;
 
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -61,6 +63,16 @@ public class Principal extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         TF_NombreAgregarUni = new javax.swing.JTextField();
         JB_AgregarfinalUni = new javax.swing.JButton();
+        JB_AtrasAgregarUni = new javax.swing.JButton();
+        frame_LisaModUniverso = new javax.swing.JFrame();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        TF_NombreModificarUni = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        CB_ModificarUni = new javax.swing.JComboBox<>();
+        JB_AtrasModUni = new javax.swing.JButton();
+        JB_ModificarUniFinal = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         JB_Servivo = new javax.swing.JButton();
@@ -232,9 +244,19 @@ public class Principal extends javax.swing.JFrame {
 
         JB_AnadirUni.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
         JB_AnadirUni.setText("Agregar");
+        JB_AnadirUni.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_AnadirUniMouseClicked(evt);
+            }
+        });
 
         JB_ModUniverso.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
         JB_ModUniverso.setText("Modificar");
+        JB_ModUniverso.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_ModUniversoMouseClicked(evt);
+            }
+        });
 
         JB_EliminarUni.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
         JB_EliminarUni.setText("Eliminar");
@@ -303,6 +325,13 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        JB_AtrasAgregarUni.setText("Atras");
+        JB_AtrasAgregarUni.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_AtrasAgregarUniMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -315,9 +344,12 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(TF_NombreAgregarUni, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(JB_AgregarfinalUni)))
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addComponent(JB_AtrasAgregarUni)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(JB_AgregarfinalUni))))
                 .addContainerGap(45, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -330,7 +362,9 @@ public class Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TF_NombreAgregarUni, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
-                .addComponent(JB_AgregarfinalUni)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JB_AgregarfinalUni)
+                    .addComponent(JB_AtrasAgregarUni))
                 .addContainerGap(192, Short.MAX_VALUE))
         );
 
@@ -346,6 +380,93 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+        );
+
+        jPanel6.setBackground(new java.awt.Color(102, 153, 255));
+
+        jLabel11.setFont(new java.awt.Font("OCR A Extended", 0, 24)); // NOI18N
+        jLabel11.setText("Modificar Universo");
+
+        TF_NombreModificarUni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+
+        jLabel12.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
+        jLabel12.setText("Escoja el Universo");
+
+        jLabel13.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
+        jLabel13.setText("Nombre");
+
+        CB_ModificarUni.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                CB_ModificarUniItemStateChanged(evt);
+            }
+        });
+
+        JB_AtrasModUni.setText("Atras");
+        JB_AtrasModUni.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_AtrasModUniMouseClicked(evt);
+            }
+        });
+
+        JB_ModificarUniFinal.setText("Modificar");
+        JB_ModificarUniFinal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_ModificarUniFinalMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(126, 126, 126)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CB_ModificarUni, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(jPanel6Layout.createSequentialGroup()
+                                    .addComponent(JB_AtrasModUni)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(JB_ModificarUniFinal))
+                                .addComponent(TF_NombreModificarUni, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CB_ModificarUni, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TF_NombreModificarUni, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JB_AtrasModUni)
+                    .addComponent(JB_ModificarUniFinal))
+                .addContainerGap(69, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout frame_LisaModUniversoLayout = new javax.swing.GroupLayout(frame_LisaModUniverso.getContentPane());
+        frame_LisaModUniverso.getContentPane().setLayout(frame_LisaModUniversoLayout);
+        frame_LisaModUniversoLayout.setHorizontalGroup(
+            frame_LisaModUniversoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        frame_LisaModUniversoLayout.setVerticalGroup(
+            frame_LisaModUniversoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -442,7 +563,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_ServivoMouseClicked
 
     private void JB_UniversoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_UniversoMouseClicked
-         this.setVisible(false);
+        this.setVisible(false);
         frame_LisaUniverso.setVisible(true);
         frame_LisaUniverso.pack();
         frame_LisaUniverso.setLocationRelativeTo(this);
@@ -450,9 +571,10 @@ public class Principal extends javax.swing.JFrame {
 
     private void JB_AgregarfinalUniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AgregarfinalUniMouseClicked
         try {
-           u = new Universo (TF_NombreAgregarUni.getText());
-           uni.add(u);
-           TF_NombreAgregarUni.setText("");
+            u = new Universo(TF_NombreAgregarUni.getText());
+            uni.add(u);
+            TF_NombreAgregarUni.setText("");
+            JOptionPane.showMessageDialog(this, "Universo Agregado Exitosamente");
         } catch (Exception e) {
         }
     }//GEN-LAST:event_JB_AgregarfinalUniMouseClicked
@@ -463,6 +585,60 @@ public class Principal extends javax.swing.JFrame {
         frame_DanielAgregar.pack();
         frame_DanielAgregar.setLocationRelativeTo(this);
     }//GEN-LAST:event_button_SerVivoAgregarMouseClicked
+
+    private void JB_AnadirUniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AnadirUniMouseClicked
+        frame_LisaUniverso.setVisible(false);
+        frame_LisaAgregar.setVisible(true);
+        frame_LisaAgregar.pack();
+        frame_LisaAgregar.setLocationRelativeTo(this);
+
+    }//GEN-LAST:event_JB_AnadirUniMouseClicked
+
+    private void JB_ModUniversoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_ModUniversoMouseClicked
+        frame_LisaUniverso.setVisible(false);
+        frame_LisaModUniverso.setVisible(true);
+        frame_LisaModUniverso.pack();
+        frame_LisaModUniverso.setLocationRelativeTo(this);
+        llenarcomboUniverso();
+    }//GEN-LAST:event_JB_ModUniversoMouseClicked
+
+    private void JB_AtrasAgregarUniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AtrasAgregarUniMouseClicked
+        frame_LisaAgregar.setVisible(false);
+        frame_LisaUniverso.setVisible(true);
+        frame_LisaUniverso.pack();
+        frame_LisaUniverso.setLocationRelativeTo(this);
+    }//GEN-LAST:event_JB_AtrasAgregarUniMouseClicked
+
+    private void JB_AtrasModUniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AtrasModUniMouseClicked
+        frame_LisaModUniverso.setVisible(false);
+        frame_LisaUniverso.setVisible(true);
+        frame_LisaUniverso.pack();
+        frame_LisaUniverso.setLocationRelativeTo(this);
+    }//GEN-LAST:event_JB_AtrasModUniMouseClicked
+
+    private void JB_ModificarUniFinalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_ModificarUniFinalMouseClicked
+        try {
+            for (int i = 0; i < uni.size(); i++) {
+                u = uni.get(i);
+                if (u.getNombre().equals(CB_ModificarUni.getSelectedItem().toString())) {
+                    u.setNombre(TF_NombreModificarUni.getText());
+                    JOptionPane.showMessageDialog(this, "Universo Modificado Exitosamente");
+                }
+            }
+            System.out.println(uni);
+
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_JB_ModificarUniFinalMouseClicked
+
+    private void CB_ModificarUniItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CB_ModificarUniItemStateChanged
+        for (Universo u : uni) {
+            if (CB_ModificarUni.getSelectedItem().equals(u.toString())) {
+                TF_NombreModificarUni.setText(CB_ModificarUni.getSelectedItem().toString());
+            }
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CB_ModificarUniItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -499,17 +675,33 @@ public class Principal extends javax.swing.JFrame {
         });
     }
 
+    private void llenarcomboUniverso() {
+        CB_ModificarUni.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{}));
+        for (Universo t : uni) {
+            DefaultComboBoxModel modelo
+                    = (DefaultComboBoxModel) CB_ModificarUni.getModel();
+            modelo.addElement(t.getNombre());
+            CB_ModificarUni.setModel(modelo);
+
+        }
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> CB_ModificarUni;
     private javax.swing.JButton JB_AgregarfinalUni;
     private javax.swing.JButton JB_AnadirUni;
+    private javax.swing.JButton JB_AtrasAgregarUni;
     private javax.swing.JButton JB_AtrasCrudUni;
+    private javax.swing.JButton JB_AtrasModUni;
     private javax.swing.JButton JB_EliminarUni;
     private javax.swing.JButton JB_Guardar;
     private javax.swing.JButton JB_ModUniverso;
+    private javax.swing.JButton JB_ModificarUniFinal;
     private javax.swing.JButton JB_Salir;
     private javax.swing.JButton JB_Servivo;
     private javax.swing.JButton JB_Universo;
     private javax.swing.JTextField TF_NombreAgregarUni;
+    private javax.swing.JTextField TF_NombreModificarUni;
     private javax.swing.JButton button_SerVivoAgregar;
     private javax.swing.JButton button_SerVivoEliminar;
     private javax.swing.JButton button_SerVivoModificar;
@@ -517,11 +709,15 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JFrame frame_DanielAgregar;
     private javax.swing.JFrame frame_DanielSeres;
     private javax.swing.JFrame frame_LisaAgregar;
+    private javax.swing.JFrame frame_LisaModUniverso;
     private javax.swing.JFrame frame_LisaUniverso;
     private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JFormattedTextField jFormattedTextField2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -535,9 +731,10 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTextField textfield_SerVivoNombre;
     // End of variables declaration//GEN-END:variables
 Universo u;
-ArrayList <Universo> uni = new ArrayList();
+    ArrayList<Universo> uni = new ArrayList();
 }
