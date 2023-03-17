@@ -4,6 +4,7 @@
  */
 package lab.pkg8p2_equipo.pkg12;
 
+import java.util.ArrayList;
 import javax.swing.JFrame;
 
 /**
@@ -39,6 +40,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jSpinner1 = new javax.swing.JSpinner();
         jLabel6 = new javax.swing.JLabel();
+        jYearChooser1 = new com.toedter.calendar.JYearChooser();
         frame_DanielSeres = new javax.swing.JFrame();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -53,8 +55,12 @@ public class Principal extends javax.swing.JFrame {
         JB_ModUniverso = new javax.swing.JButton();
         JB_EliminarUni = new javax.swing.JButton();
         JB_AtrasCrudUni = new javax.swing.JButton();
-        jFrame1 = new javax.swing.JFrame();
+        frame_LisaAgregar = new javax.swing.JFrame();
         jPanel5 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        TF_NombreAgregarUni = new javax.swing.JTextField();
+        JB_AgregarfinalUni = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         JB_Servivo = new javax.swing.JButton();
@@ -103,10 +109,11 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jFormattedTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jSpinner1, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jYearChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(258, 258, 258))
         );
         jPanel3Layout.setVerticalGroup(
@@ -127,8 +134,13 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap(267, Short.MAX_VALUE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jFormattedTextField1)
+                        .addContainerGap(267, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jYearChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout frame_DanielAgregarLayout = new javax.swing.GroupLayout(frame_DanielAgregar.getContentPane());
@@ -267,26 +279,64 @@ public class Principal extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(102, 153, 255));
 
+        jLabel9.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
+        jLabel9.setText("Nombre:");
+
+        jLabel10.setFont(new java.awt.Font("OCR A Extended", 0, 24)); // NOI18N
+        jLabel10.setText("Agregar Universo");
+
+        TF_NombreAgregarUni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
+
+        JB_AgregarfinalUni.setText("Agregar");
+        JB_AgregarfinalUni.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JB_AgregarfinalUniMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 520, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(120, 120, 120))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(TF_NombreAgregarUni, javax.swing.GroupLayout.PREFERRED_SIZE, 445, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(JB_AgregarfinalUni)))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 440, Short.MAX_VALUE)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TF_NombreAgregarUni, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(32, 32, 32)
+                .addComponent(JB_AgregarfinalUni)
+                .addContainerGap(192, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
-        jFrame1.getContentPane().setLayout(jFrame1Layout);
-        jFrame1Layout.setHorizontalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout frame_LisaAgregarLayout = new javax.swing.GroupLayout(frame_LisaAgregar.getContentPane());
+        frame_LisaAgregar.getContentPane().setLayout(frame_LisaAgregarLayout);
+        frame_LisaAgregarLayout.setHorizontalGroup(
+            frame_LisaAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        jFrame1Layout.setVerticalGroup(
-            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        frame_LisaAgregarLayout.setVerticalGroup(
+            frame_LisaAgregarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(frame_LisaAgregarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -389,6 +439,15 @@ public class Principal extends javax.swing.JFrame {
         frame_LisaUniverso.setLocationRelativeTo(this);
     }//GEN-LAST:event_JB_UniversoMouseClicked
 
+    private void JB_AgregarfinalUniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AgregarfinalUniMouseClicked
+        try {
+           u = new Universo (TF_NombreAgregarUni.getText());
+           uni.add(u);
+           TF_NombreAgregarUni.setText("");
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_JB_AgregarfinalUniMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -425,6 +484,7 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JB_AgregarfinalUni;
     private javax.swing.JButton JB_AnadirUni;
     private javax.swing.JButton JB_AtrasCrudUni;
     private javax.swing.JButton JB_EliminarUni;
@@ -433,16 +493,18 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton JB_Salir;
     private javax.swing.JButton JB_Servivo;
     private javax.swing.JButton JB_Universo;
+    private javax.swing.JTextField TF_NombreAgregarUni;
     private javax.swing.JButton button_SerVivoAgregar;
     private javax.swing.JButton button_SerVivoEliminar;
     private javax.swing.JButton button_SerVivoModificar;
     private javax.swing.JButton button_SerVivoRegresar;
     private javax.swing.JFrame frame_DanielAgregar;
     private javax.swing.JFrame frame_DanielSeres;
+    private javax.swing.JFrame frame_LisaAgregar;
     private javax.swing.JFrame frame_LisaUniverso;
     private javax.swing.JFormattedTextField jFormattedTextField1;
-    private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -450,12 +512,16 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JSpinner jSpinner1;
+    private com.toedter.calendar.JYearChooser jYearChooser1;
     private javax.swing.JTextField textfield_SerVivoNombre;
     // End of variables declaration//GEN-END:variables
+Universo u;
+ArrayList <Universo> uni = new ArrayList();
 }
