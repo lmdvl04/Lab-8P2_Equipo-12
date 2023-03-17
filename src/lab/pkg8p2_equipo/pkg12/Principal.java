@@ -40,7 +40,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jSpinner1 = new javax.swing.JSpinner();
         jLabel6 = new javax.swing.JLabel();
-        jYearChooser1 = new com.toedter.calendar.JYearChooser();
         frame_DanielSeres = new javax.swing.JFrame();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -112,8 +111,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jSpinner1, javax.swing.GroupLayout.DEFAULT_SIZE, 92, Short.MAX_VALUE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jYearChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(258, 258, 258))
         );
         jPanel3Layout.setVerticalGroup(
@@ -134,13 +132,8 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jFormattedTextField1)
-                        .addContainerGap(267, Short.MAX_VALUE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jYearChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(267, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout frame_DanielAgregarLayout = new javax.swing.GroupLayout(frame_DanielAgregar.getContentPane());
@@ -161,6 +154,11 @@ public class Principal extends javax.swing.JFrame {
 
         button_SerVivoAgregar.setBackground(new java.awt.Color(255, 255, 204));
         button_SerVivoAgregar.setText("Agregar Ser Vivo");
+        button_SerVivoAgregar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_SerVivoAgregarMouseClicked(evt);
+            }
+        });
 
         button_SerVivoModificar.setBackground(new java.awt.Color(255, 255, 204));
         button_SerVivoModificar.setText("Agregar Modificar");
@@ -448,6 +446,13 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_JB_AgregarfinalUniMouseClicked
 
+    private void button_SerVivoAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_SerVivoAgregarMouseClicked
+        frame_DanielSeres.setVisible(false);
+        frame_DanielAgregar.setVisible(true);
+        frame_DanielAgregar.pack();
+        frame_DanielAgregar.setLocationRelativeTo(this);
+    }//GEN-LAST:event_button_SerVivoAgregarMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -519,7 +524,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JSpinner jSpinner1;
-    private com.toedter.calendar.JYearChooser jYearChooser1;
     private javax.swing.JTextField textfield_SerVivoNombre;
     // End of variables declaration//GEN-END:variables
 Universo u;
