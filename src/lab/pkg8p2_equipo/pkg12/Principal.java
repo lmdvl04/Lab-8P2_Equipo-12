@@ -651,41 +651,24 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jPanel7.setBackground(new java.awt.Color(102, 153, 255));
-<<<<<<< HEAD
-
-        jLabel21.setFont(new java.awt.Font("OCR A Extended", 0, 24)); // NOI18N
-        jLabel21.setText("Modificar Universo");
-        jPanel7.add(jLabel21);
-=======
         jPanel7.setPreferredSize(new java.awt.Dimension(520, 440));
 
         jLabel21.setFont(new java.awt.Font("OCR A Extended", 0, 24)); // NOI18N
         jLabel21.setText("Modificar Universo");
->>>>>>> f560b4dfe75f9d010ebca64b55c82c89222d3590
 
         TF_NombreModificarUni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
-        jPanel7.add(TF_NombreModificarUni);
 
         jLabel22.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
         jLabel22.setText("Escoja el Universo");
-<<<<<<< HEAD
-        jPanel7.add(jLabel22);
 
         jLabel23.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
         jLabel23.setText("Nombre");
-        jPanel7.add(jLabel23);
-=======
-
-        jLabel23.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        jLabel23.setText("Nombre");
->>>>>>> f560b4dfe75f9d010ebca64b55c82c89222d3590
 
         CB_ModificarUni.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 CB_ModificarUniItemStateChanged(evt);
             }
         });
-        jPanel7.add(CB_ModificarUni);
 
         JB_AtrasModUni.setText("Atras");
         JB_AtrasModUni.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -693,7 +676,6 @@ public class Principal extends javax.swing.JFrame {
                 JB_AtrasModUniMouseClicked(evt);
             }
         });
-        jPanel7.add(JB_AtrasModUni);
 
         JB_ModificarUniFinal.setText("Modificar");
         JB_ModificarUniFinal.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -701,9 +683,6 @@ public class Principal extends javax.swing.JFrame {
                 JB_ModificarUniFinalMouseClicked(evt);
             }
         });
-<<<<<<< HEAD
-        jPanel7.add(JB_ModificarUniFinal);
-=======
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -751,17 +730,12 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(JB_AtrasModUni))
                 .addGap(122, 122, 122))
         );
->>>>>>> f560b4dfe75f9d010ebca64b55c82c89222d3590
 
         javax.swing.GroupLayout frame_LisaModUniversoLayout = new javax.swing.GroupLayout(frame_LisaModUniverso.getContentPane());
         frame_LisaModUniverso.getContentPane().setLayout(frame_LisaModUniversoLayout);
         frame_LisaModUniversoLayout.setHorizontalGroup(
             frame_LisaModUniversoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-<<<<<<< HEAD
-            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-=======
-            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 520, Short.MAX_VALUE)
->>>>>>> f560b4dfe75f9d010ebca64b55c82c89222d3590
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
         );
         frame_LisaModUniversoLayout.setVerticalGroup(
             frame_LisaModUniversoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -883,6 +857,7 @@ public class Principal extends javax.swing.JFrame {
         frame_DanielAgregar.setVisible(true);
         frame_DanielAgregar.pack();
         frame_DanielAgregar.setLocationRelativeTo(this);
+        
     }//GEN-LAST:event_button_SerVivoAgregarMouseClicked
 
     private void JB_AnadirUniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AnadirUniMouseClicked
