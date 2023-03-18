@@ -412,30 +412,28 @@
                       <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="button_modificarSerVivo" min="-2" pref="173" max="-2" attributes="0"/>
+                              <Component id="button_anadirSerVivo" min="-2" pref="173" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="button_agregarSerVivo" min="-2" pref="173" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="87" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="combobox_SerVivoUniverso" max="32767" attributes="0"/>
-                                      <Component id="jLabel3" min="-2" pref="102" max="-2" attributes="0"/>
-                                      <Component id="textfield_SerVivoNombre" max="32767" attributes="0"/>
-                                      <Component id="jLabel4" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
-                                      <Component id="formattedfield_SerVivoID" alignment="0" pref="260" max="32767" attributes="0"/>
-                                  </Group>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="combobox_SerVivoUniverso" pref="260" max="32767" attributes="0"/>
+                                  <Component id="jLabel3" min="-2" pref="102" max="-2" attributes="0"/>
+                                  <Component id="textfield_SerVivoNombre" max="32767" attributes="0"/>
+                                  <Component id="jLabel4" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
                                   <Component id="jLabel11" alignment="0" min="-2" pref="78" max="-2" attributes="0"/>
+                                  <Component id="textfield_SerVivoID" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jLabel5" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
                                   <Component id="jLabel6" min="-2" pref="83" max="-2" attributes="0"/>
-                                  <Component id="formattedfield_SerVivoAnio" max="32767" attributes="0"/>
                                   <Component id="jLabel12" min="-2" pref="83" max="-2" attributes="0"/>
                                   <Component id="combobox_SerVivoRaza" alignment="0" pref="175" max="32767" attributes="0"/>
                                   <Component id="spinner_SerVivoPoder" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="textfield_SerVivoAnio" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="175" max="-2" attributes="0"/>
                           </Group>
@@ -464,9 +462,9 @@
                           <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="formattedfield_SerVivoID" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="formattedfield_SerVivoAnio" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="textfield_SerVivoID" pref="41" max="32767" attributes="0"/>
+                          <Component id="textfield_SerVivoAnio" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -478,10 +476,10 @@
                           <Component id="combobox_SerVivoUniverso" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                           <Component id="combobox_SerVivoRaza" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="44" max="32767" attributes="0"/>
+                      <EmptySpace pref="33" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="button_agregarSerVivo" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
-                          <Component id="button_modificarSerVivo" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
+                          <Component id="button_anadirSerVivo" alignment="3" min="-2" pref="59" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                   </Group>
@@ -515,13 +513,6 @@
                 <Property name="text" type="java.lang.String" value="ID"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JFormattedTextField" name="formattedfield_SerVivoID">
-              <Properties>
-                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                  <Format format="##########" subtype="-1" type="5"/>
-                </Property>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -543,13 +534,6 @@
                   <Font name="Segoe UI" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="A&#xf1;o"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JFormattedTextField" name="formattedfield_SerVivoAnio">
-              <Properties>
-                <Property name="formatterFactory" type="javax.swing.JFormattedTextField$AbstractFormatterFactory" editor="org.netbeans.modules.form.editors.AbstractFormatterFactoryEditor" preCode="try {" postCode="} catch (java.text.ParseException ex) {&#xa;ex.printStackTrace();&#xa;}">
-                  <Format format="####" subtype="-1" type="5"/>
-                </Property>
               </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="combobox_SerVivoUniverso">
@@ -581,7 +565,11 @@
             <Component class="javax.swing.JComboBox" name="combobox_SerVivoRaza">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="0"/>
+                  <StringArray count="3">
+                    <StringItem index="0" value="Humano"/>
+                    <StringItem index="1" value="Amanto"/>
+                    <StringItem index="2" value=" "/>
+                  </StringArray>
                 </Property>
               </Properties>
               <AuxValues>
@@ -599,13 +587,20 @@
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="button_agregarSerVivoMouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="button_modificarSerVivo">
+            <Component class="javax.swing.JButton" name="button_anadirSerVivo">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="VOLVER"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="button_anadirSerVivoMouseClicked"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="textfield_SerVivoID">
+            </Component>
+            <Component class="javax.swing.JTextField" name="textfield_SerVivoAnio">
             </Component>
           </SubComponents>
         </Container>
@@ -701,6 +696,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Modificar Ser Vivo"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="button_SerVivoModificarMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="button_SerVivoEliminar">
               <Properties>
@@ -709,6 +707,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Eliminar Ser Vivo"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="button_SerVivoEliminarMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="button_SerVivoRegresar">
               <Properties>
@@ -717,6 +718,9 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="Volver"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="button_SerVivoRegresarMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

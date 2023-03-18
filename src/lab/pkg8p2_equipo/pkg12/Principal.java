@@ -66,17 +66,17 @@ public class Principal extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         textfield_SerVivoNombre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        formattedfield_SerVivoID = new javax.swing.JFormattedTextField();
         jLabel5 = new javax.swing.JLabel();
         spinner_SerVivoPoder = new javax.swing.JSpinner();
         jLabel6 = new javax.swing.JLabel();
-        formattedfield_SerVivoAnio = new javax.swing.JFormattedTextField();
         combobox_SerVivoUniverso = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         combobox_SerVivoRaza = new javax.swing.JComboBox<>();
         button_agregarSerVivo = new javax.swing.JButton();
-        button_modificarSerVivo = new javax.swing.JButton();
+        button_anadirSerVivo = new javax.swing.JButton();
+        textfield_SerVivoID = new javax.swing.JTextField();
+        textfield_SerVivoAnio = new javax.swing.JTextField();
         frame_DanielSeres = new javax.swing.JFrame();
         jPanel2 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -333,12 +333,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel4.setText("ID");
 
-        try {
-            formattedfield_SerVivoID.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##########")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel5.setText("Poder");
 
@@ -347,17 +341,13 @@ public class Principal extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel6.setText("Año");
 
-        try {
-            formattedfield_SerVivoAnio.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel11.setText("Universo");
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel12.setText("Raza");
+
+        combobox_SerVivoRaza.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Humano", "Amanto", " " }));
 
         button_agregarSerVivo.setBackground(new java.awt.Color(255, 255, 204));
         button_agregarSerVivo.setText("OK");
@@ -367,8 +357,13 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        button_modificarSerVivo.setBackground(new java.awt.Color(255, 255, 204));
-        button_modificarSerVivo.setText("VOLVER");
+        button_anadirSerVivo.setBackground(new java.awt.Color(255, 255, 204));
+        button_anadirSerVivo.setText("VOLVER");
+        button_anadirSerVivo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_anadirSerVivoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -382,27 +377,26 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(14, 14, 14)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(button_modificarSerVivo, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(button_anadirSerVivo, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(button_agregarSerVivo, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(87, 87, 87))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(combobox_SerVivoUniverso, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(textfield_SerVivoNombre)
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(formattedfield_SerVivoID, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE))
-                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(combobox_SerVivoUniverso, 0, 260, Short.MAX_VALUE)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textfield_SerVivoNombre)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(textfield_SerVivoID))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(formattedfield_SerVivoAnio)
                             .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(combobox_SerVivoRaza, 0, 175, Short.MAX_VALUE)
-                            .addComponent(spinner_SerVivoPoder))
+                            .addComponent(spinner_SerVivoPoder)
+                            .addComponent(textfield_SerVivoAnio))
                         .addGap(175, 175, 175))))
         );
         jPanel3Layout.setVerticalGroup(
@@ -423,9 +417,9 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(formattedfield_SerVivoID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(formattedfield_SerVivoAnio, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(textfield_SerVivoID, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                    .addComponent(textfield_SerVivoAnio))
                 .addGap(50, 50, 50)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
@@ -434,10 +428,10 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(combobox_SerVivoUniverso, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(combobox_SerVivoRaza, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(button_agregarSerVivo, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(button_modificarSerVivo, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(button_anadirSerVivo, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48))
         );
 
@@ -467,12 +461,27 @@ public class Principal extends javax.swing.JFrame {
 
         button_SerVivoModificar.setBackground(new java.awt.Color(255, 255, 204));
         button_SerVivoModificar.setText("Modificar Ser Vivo");
+        button_SerVivoModificar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_SerVivoModificarMouseClicked(evt);
+            }
+        });
 
         button_SerVivoEliminar.setBackground(new java.awt.Color(255, 255, 204));
         button_SerVivoEliminar.setText("Eliminar Ser Vivo");
+        button_SerVivoEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_SerVivoEliminarMouseClicked(evt);
+            }
+        });
 
         button_SerVivoRegresar.setBackground(new java.awt.Color(255, 255, 204));
         button_SerVivoRegresar.setText("Volver");
+        button_SerVivoRegresar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                button_SerVivoRegresarMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -675,39 +684,18 @@ public class Principal extends javax.swing.JFrame {
         );
 
         jPanel7.setBackground(new java.awt.Color(102, 153, 255));
-
-
-        jLabel21.setFont(new java.awt.Font("OCR A Extended", 0, 24)); // NOI18N
-        jLabel21.setText("Modificar Universo");
-        jPanel7.add(jLabel21);
-
-
         jPanel7.setPreferredSize(new java.awt.Dimension(520, 440));
 
         jLabel21.setFont(new java.awt.Font("OCR A Extended", 0, 24)); // NOI18N
         jLabel21.setText("Modificar Universo");
-
-
 
         TF_NombreModificarUni.setFont(new java.awt.Font("Roboto Light", 0, 14)); // NOI18N
 
         jLabel22.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
         jLabel22.setText("Escoja el Universo");
 
-
         jLabel23.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
         jLabel23.setText("Nombre");
-
-
-        jPanel7.add(jLabel22);
-
-        jLabel23.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        jLabel23.setText("Nombre");
-        jPanel7.add(jLabel23);
-
-        jLabel23.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        jLabel23.setText("Nombre");
-
 
         CB_ModificarUni.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -728,10 +716,6 @@ public class Principal extends javax.swing.JFrame {
                 JB_ModificarUniFinalMouseClicked(evt);
             }
         });
-
-        jPanel7.add(JB_ModificarUniFinal);
-
-
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -784,15 +768,7 @@ public class Principal extends javax.swing.JFrame {
         frame_LisaModUniverso.getContentPane().setLayout(frame_LisaModUniversoLayout);
         frame_LisaModUniversoLayout.setHorizontalGroup(
             frame_LisaModUniversoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-
             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
-
-
-            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
-            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-
-            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 520, Short.MAX_VALUE)
-
         );
         frame_LisaModUniversoLayout.setVerticalGroup(
             frame_LisaModUniversoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -963,10 +939,15 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_SalirMouseClicked
 
     private void JB_ServivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_ServivoMouseClicked
+    if(uni.isEmpty()){
+            JOptionPane.showMessageDialog(this, "Debe crear un universo primero");
+            
+        }else{
         this.setVisible(false);
         frame_DanielSeres.setVisible(true);
         frame_DanielSeres.pack();
         frame_DanielSeres.setLocationRelativeTo(this);
+    }
     }//GEN-LAST:event_JB_ServivoMouseClicked
 
     private void JB_UniversoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_UniversoMouseClicked
@@ -987,10 +968,12 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_AgregarfinalUniMouseClicked
 
     private void button_SerVivoAgregarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_SerVivoAgregarMouseClicked
+    
         frame_DanielSeres.setVisible(false);
         frame_DanielAgregar.setVisible(true);
         frame_DanielAgregar.pack();
         frame_DanielAgregar.setLocationRelativeTo(this);
+        llenarcomboAgregarSer();
         
     }//GEN-LAST:event_button_SerVivoAgregarMouseClicked
 
@@ -1004,7 +987,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void JB_ModUniversoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_ModUniversoMouseClicked
         frame_LisaUniverso.setVisible(false);
-        
+
         frame_LisaModUniverso.pack();
         frame_LisaModUniverso.setLocationRelativeTo(this);
         frame_LisaModUniverso.setVisible(true);
@@ -1051,7 +1034,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void JB_EliminarUniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_EliminarUniMouseClicked
         frame_LisaUniverso.setVisible(false);
-        
+
         JF_EliminarUni.pack();
         JF_EliminarUni.setLocationRelativeTo(this);
         JF_EliminarUni.setVisible(true);
@@ -1061,18 +1044,18 @@ public class Principal extends javax.swing.JFrame {
     private void JB_AtrasCrudUniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AtrasCrudUniMouseClicked
         frame_LisaUniverso.setVisible(false);
         this.setVisible(true);
- 
+
     }//GEN-LAST:event_JB_AtrasCrudUniMouseClicked
 
     private void JB_AtrasEliminarUniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_AtrasEliminarUniMouseClicked
-       JF_EliminarUni.setVisible(false);
+        JF_EliminarUni.setVisible(false);
         frame_LisaUniverso.setVisible(true);
         frame_LisaUniverso.pack();
         frame_LisaUniverso.setLocationRelativeTo(this);
     }//GEN-LAST:event_JB_AtrasEliminarUniMouseClicked
 
     private void JB_EliminarFinalUniMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_EliminarFinalUniMouseClicked
-              if (JT_Eliminar.getSelectedRow() >= 0) {
+        if (JT_Eliminar.getSelectedRow() >= 0) {
             int r = JOptionPane.showConfirmDialog(JT_Eliminar, "Desea elimnar Universo????", "Eliminar Universo", YES_NO_OPTION);
             if (r == 0) {
                 uni.remove(JT_Eliminar.getSelectedRow());
@@ -1085,8 +1068,63 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_JB_EliminarFinalUniMouseClicked
 
     private void button_agregarSerVivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_agregarSerVivoMouseClicked
-       
+     //   try {
+      Universo un = new Universo() ;
+     for (Universo u : uni) {
+         if(combobox_SerVivoUniverso.getSelectedItem().equals(u.toString())){
+             un=u;
+         }
+     }
+
+    //= (Universo)combobox_SerVivoUniverso.getSelectedItem(); 
+        
+     sv = new SerVivo(textfield_SerVivoNombre.getText(), Integer.parseInt(textfield_SerVivoID.getText()), ((Integer) spinner_SerVivoPoder.getValue()), textfield_SerVivoAnio.getText(), un, combobox_SerVivoRaza.getSelectedItem().toString());
+            ser.add(sv);
+            for (int i = 0; i < uni.size(); i++) {
+                u = uni.get(i);
+                if (u.getNombre().equals(combobox_SerVivoUniverso.getSelectedItem().toString())) {
+                    u.getListadepersonas().add(sv);
+                    
+
+                }
+            }
+            System.out.println(uni);
+            JOptionPane.showMessageDialog(this, "Ser vivo anadido exitosamente");
+            textfield_SerVivoNombre.setText("");
+            textfield_SerVivoID.setText("");
+            spinner_SerVivoPoder.setValue(0);
+            textfield_SerVivoAnio.setText("");
+
+//        } catch (Exception e) {
+//        }
     }//GEN-LAST:event_button_agregarSerVivoMouseClicked
+
+    private void button_SerVivoModificarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_SerVivoModificarMouseClicked
+        frame_DanielSeres.setVisible(false);
+
+        frame_DanielModificar.setVisible(true);
+        frame_DanielModificar.pack();
+        frame_DanielModificar.setLocationRelativeTo(this);
+    }//GEN-LAST:event_button_SerVivoModificarMouseClicked
+
+    private void button_SerVivoEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_SerVivoEliminarMouseClicked
+        frame_DanielSeres.setVisible(false);
+        frame_DanielEliminar.setVisible(true);
+        frame_DanielEliminar.pack();
+        frame_DanielEliminar.setLocationRelativeTo(this);
+    }//GEN-LAST:event_button_SerVivoEliminarMouseClicked
+
+    private void button_SerVivoRegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_SerVivoRegresarMouseClicked
+        frame_DanielSeres.setVisible(false);
+        this.setVisible(true);
+    }//GEN-LAST:event_button_SerVivoRegresarMouseClicked
+
+    private void button_anadirSerVivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_anadirSerVivoMouseClicked
+        frame_DanielAgregar.setVisible(false);
+        frame_DanielSeres.setVisible(true);
+        frame_DanielSeres.pack();
+        frame_DanielSeres.setLocationRelativeTo(this);
+    }//GEN-LAST:event_button_anadirSerVivoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1133,6 +1171,18 @@ public class Principal extends javax.swing.JFrame {
 
         }
     }
+
+    private void llenarcomboAgregarSer() {
+        combobox_SerVivoUniverso.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{}));
+        for (Universo t : uni) {
+            DefaultComboBoxModel modelo
+                    = (DefaultComboBoxModel) combobox_SerVivoUniverso.getModel();
+            modelo.addElement(t.getNombre());
+            combobox_SerVivoUniverso.setModel(modelo);
+
+        }
+    }
+
     private void listarTabla() {
         try {
 
@@ -1142,11 +1192,11 @@ public class Principal extends javax.swing.JFrame {
 
             // TODO add your handling code here:
             for (Universo t : uni) {
-                    Object[] row = {t.getNombre()};
-                    DefaultTableModel modelo = (DefaultTableModel) JT_Eliminar.getModel();
-                    modelo.addRow(row);
-                    JT_Eliminar.setModel(modelo);
-                
+                Object[] row = {t.getNombre()};
+                DefaultTableModel modelo = (DefaultTableModel) JT_Eliminar.getModel();
+                modelo.addRow(row);
+                JT_Eliminar.setModel(modelo);
+
             }
 
         } catch (Exception ex) {
@@ -1181,7 +1231,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton button_agregarSerVivo;
     private javax.swing.JButton button_agregarSerVivomod;
     private javax.swing.JButton button_agregarSerVivomod1;
-    private javax.swing.JButton button_modificarSerVivo;
+    private javax.swing.JButton button_anadirSerVivo;
     private javax.swing.JButton button_volverSerVivomod;
     private javax.swing.JButton button_volverSerVivomod1;
     private javax.swing.JComboBox<String> combobox_SerVivoRaza;
@@ -1190,9 +1240,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> combobox_SerVivoUniversomod;
     private javax.swing.JComboBox<String> combobox_modificarpersona;
     private javax.swing.JComboBox<String> combobox_modificarpersona1;
-    private javax.swing.JFormattedTextField formattedfield_SerVivoAnio;
     private javax.swing.JFormattedTextField formattedfield_SerVivoAniomod;
-    private javax.swing.JFormattedTextField formattedfield_SerVivoID;
     private javax.swing.JFormattedTextField formattedfield_SerVivoIDmod;
     private javax.swing.JFrame frame_DanielAgregar;
     private javax.swing.JFrame frame_DanielEliminar;
@@ -1239,9 +1287,13 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner spinner_SerVivoPoder;
     private javax.swing.JSpinner spinner_SerVivoPodermod;
+    private javax.swing.JTextField textfield_SerVivoAnio;
+    private javax.swing.JTextField textfield_SerVivoID;
     private javax.swing.JTextField textfield_SerVivoNombre;
     private javax.swing.JTextField textfield_SerVivoNombremod;
     // End of variables declaration//GEN-END:variables
 Universo u;
+    SerVivo sv;
     ArrayList<Universo> uni = new ArrayList();
+    ArrayList<SerVivo> ser = new ArrayList();
 }
