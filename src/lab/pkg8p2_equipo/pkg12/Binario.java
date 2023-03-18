@@ -1,11 +1,13 @@
 
 package lab.pkg8p2_equipo.pkg12;
 
+
 import javax.swing.JTable;
 
 
 public class Binario{
     private JTable tabla;
+    
 
     public Binario(JTable tabla) {
         this.tabla = tabla;

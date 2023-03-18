@@ -972,7 +972,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jPanel7" alignment="0" pref="520" max="32767" attributes="0"/>
+              <Component id="jPanel7" alignment="0" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -1277,7 +1277,7 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jProgressBar1" min="-2" pref="508" max="-2" attributes="0"/>
+                                      <Component id="pendejo" min="-2" pref="508" max="-2" attributes="0"/>
                                       <Group type="102" attributes="0">
                                           <Component id="jLabel26" min="-2" pref="96" max="-2" attributes="0"/>
                                           <EmptySpace max="32767" attributes="0"/>
@@ -1308,7 +1308,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel25" min="-2" pref="67" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jProgressBar1" min="-2" pref="32" max="-2" attributes="0"/>
+                      <Component id="pendejo" min="-2" pref="32" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="jLabel26" max="32767" attributes="0"/>
@@ -1336,7 +1336,7 @@
                 <Property name="text" type="java.lang.String" value="Guardar y Cargar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JProgressBar" name="jProgressBar1">
+            <Component class="javax.swing.JProgressBar" name="pendejo">
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane2">
               <AuxValues>
@@ -1387,11 +1387,17 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Cargar"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton2MouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton3">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Guardar"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton3MouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

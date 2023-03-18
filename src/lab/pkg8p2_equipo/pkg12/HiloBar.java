@@ -38,9 +38,9 @@ public class HiloBar implements Runnable{
     @Override
     public void run() {
         while(true){
-            barra.setValue(barra.getValue()+1);
+            barra.setValue(barra.getValue()+10);
                 if(barra.getValue()==100){
-                    estado = false;
+                    barra.setValue(100);
                 }  
         
             try {

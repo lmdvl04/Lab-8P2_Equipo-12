@@ -4,9 +4,17 @@
  */
 package lab.pkg8p2_equipo.pkg12;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.YES_NO_OPTION;
@@ -118,7 +126,7 @@ public class Principal extends javax.swing.JFrame {
         F_Cargar = new javax.swing.JFrame();
         jPanel10 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
-        jProgressBar1 = new javax.swing.JProgressBar();
+        pendejo = new javax.swing.JProgressBar();
         jScrollPane2 = new javax.swing.JScrollPane();
         JT_GuardaryCargar = new javax.swing.JTable();
         cB_Guargar = new javax.swing.JComboBox<>();
@@ -924,8 +932,18 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jButton2.setText("Cargar");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
 
         jButton3.setText("Guardar");
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -940,7 +958,7 @@ public class Principal extends javax.swing.JFrame {
                         .addGroup(jPanel10Layout.createSequentialGroup()
                             .addGap(22, 22, 22)
                             .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(pendejo, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel10Layout.createSequentialGroup()
                                     .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -963,7 +981,7 @@ public class Principal extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jProgressBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pendejo, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1168,9 +1186,10 @@ public class Principal extends javax.swing.JFrame {
                     u.setNombre(TF_NombreModificarUni.getText());
                     JOptionPane.showMessageDialog(this, "Universo Modificado Exitosamente");
                 }
-            }
-            System.out.println(uni);
 
+            }
+
+            llenarcomboUniverso();
         } catch (Exception e) {
         }
     }//GEN-LAST:event_JB_ModificarUniFinalMouseClicked
@@ -1221,30 +1240,44 @@ public class Principal extends javax.swing.JFrame {
 
     private void button_agregarSerVivoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_button_agregarSerVivoMouseClicked
         //try {
-            Universo un = new Universo();
-            for (Universo u : uni) {
-                if (combobox_SerVivoUniverso.getSelectedItem().equals(u.toString())) {
-                    un = u;
-                }
+        Universo un = new Universo();
+        for (Universo u : uni) {
+            if (combobox_SerVivoUniverso.getSelectedItem().equals(u.toString())) {
+                un = u;
             }
+        }
 
-            //= (Universo)combobox_SerVivoUniverso.getSelectedItem(); 
-            SerVivo x;
-            x = new SerVivo(textfield_SerVivoNombre.getText(), Integer.parseInt(textfield_SerVivoID.getText()), ((Integer) spinner_SerVivoPoder.getValue()), textfield_SerVivoAnio.getText(), un, combobox_SerVivoRaza.getSelectedItem().toString());
-            ser.add(x);
-            for (int i = 0; i < uni.size(); i++) {
-                u = uni.get(i);
-                if (u.getNombre().equals(combobox_SerVivoUniverso.getSelectedItem().toString())) {
-                    u.getListadepersonas().add(x);
+        //= (Universo)combobox_SerVivoUniverso.getSelectedItem(); 
+        SerVivo x;
+        x = new SerVivo(textfield_SerVivoNombre.getText(), Integer.parseInt(textfield_SerVivoID.getText()), ((Integer) spinner_SerVivoPoder.getValue()), textfield_SerVivoAnio.getText(), un, combobox_SerVivoRaza.getSelectedItem().toString());
+        ser.add(x);
+        for (int i = 0; i < uni.size(); i++) {
+            u = uni.get(i);
+            if (u.getNombre().equals(combobox_SerVivoUniverso.getSelectedItem().toString())) {
+                u.getListadepersonas().add(x);
 
-                }
             }
-            System.out.println(uni);
-            JOptionPane.showMessageDialog(this, "Ser vivo anadido exitosamente");
-            textfield_SerVivoNombre.setText("");
-            textfield_SerVivoID.setText("");
-            spinner_SerVivoPoder.setValue(0);
-            textfield_SerVivoAnio.setText("");
+        }
+//        Dba db = new Dba("./base2.mdb");
+//        db.conectar();
+//        try {
+//            
+//            
+//            
+//            db.query.execute("INSERT INTO Ser"  
+//                    + " VALUES ('"+un.toString() + "', '" +textfield_SerVivoNombre.getText()  + "')");
+//            db.commit();
+//        } catch (SQLException ex) {
+//            ex.printStackTrace();
+//        }
+//        db.desconectar();
+        
+        System.out.println(uni);
+        JOptionPane.showMessageDialog(this, "Ser vivo anadido exitosamente");
+        textfield_SerVivoNombre.setText("");
+        textfield_SerVivoID.setText("");
+        spinner_SerVivoPoder.setValue(0);
+        textfield_SerVivoAnio.setText("");
 
 //        } catch (Exception e) {
 //        }
@@ -1361,12 +1394,16 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_button_volverSerVivomod1ActionPerformed
 
     private void JB_GuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JB_GuardarMouseClicked
-        this.setVisible(false);
-        F_Cargar.setVisible(true);
-        F_Cargar.pack();
-        F_Cargar.setLocationRelativeTo(this);
-        llenarcomboboxguardar();
-        listarTablaCargar();
+        try {
+            this.setVisible(false);
+            F_Cargar.setVisible(true);
+            F_Cargar.pack();
+            F_Cargar.setLocationRelativeTo(this);
+            llenarcomboboxguardar();
+            listarTablaCargar();
+        } catch (NullPointerException e) {
+        }
+
     }//GEN-LAST:event_JB_GuardarMouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
@@ -1381,6 +1418,68 @@ public class Principal extends javax.swing.JFrame {
     private void cB_GuargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cB_GuargarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cB_GuargarActionPerformed
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        try {
+            JFileChooser jfc = new JFileChooser();
+            int index = jfc.showSaveDialog(F_Cargar);
+
+            FileOutputStream fw = null;
+            ObjectOutputStream bw = null;
+            if (index == JFileChooser.APPROVE_OPTION) {
+                File archivo = jfc.getSelectedFile();
+                try {
+                    fw = new FileOutputStream(archivo);
+                    bw = new ObjectOutputStream(fw);
+                    Binario b = new Binario(JT_GuardaryCargar);
+                    bw.writeObject(b);
+                    bw.flush();
+                } catch (Exception e) {
+                }
+            }
+            try {
+                bw.close();
+                fw.close();
+            } catch (IOException e) {
+            }
+        } catch (NullPointerException e) {
+        }
+
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        try {
+            File archivo = null;
+            FileInputStream entrada = null;
+            ObjectInputStream objeto = null;
+            try {
+                JFileChooser jfc = new JFileChooser();
+                int index = jfc.showSaveDialog(F_Cargar);
+
+                HiloBar hb = new HiloBar(pendejo);
+                Thread x = new Thread(hb);
+                x.start();
+                if (pendejo.getValue() == 100) {
+                    
+                    if (index == JFileChooser.APPROVE_OPTION) {
+                        archivo = jfc.getSelectedFile();
+                        entrada = new FileInputStream(archivo);
+                        objeto = new ObjectInputStream(entrada);
+                        Binario b = (Binario) objeto.readObject();
+                        JT_GuardaryCargar.setModel(((Binario) b).getTabla().getModel());
+                    }
+                }
+            } catch (Exception e) {
+            }
+            try {
+                objeto.close();
+                entrada.close();
+            } catch (IOException e) {
+            }
+        } catch (NullPointerException e) {
+        }
+
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -1460,7 +1559,6 @@ public class Principal extends javax.swing.JFrame {
 
         }
     }
-    
 
     private void llenarcomboboxguardar() {
         cB_Guargar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{}));
@@ -1509,16 +1607,19 @@ public class Principal extends javax.swing.JFrame {
         try {
 
             //limpiar tabla
-            JT_GuardaryCargar.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{
+            if(cB_Guargar.getItemCount()>0){
+                JT_GuardaryCargar.setModel(new javax.swing.table.DefaultTableModel(new Object[][]{}, new String[]{
                 cB_Guargar.getSelectedItem().toString()}));
+            }
+            
 
             // TODO add your handling code here:
             for (SerVivo t : ser) {
-                if(cB_Guargar.getSelectedItem().equals(t.getUniverse().toString())){
-                Object[] row = {t.getNombre()};
-                DefaultTableModel modelo = (DefaultTableModel) JT_GuardaryCargar.getModel();
-                modelo.addRow(row);
-                JT_GuardaryCargar.setModel(modelo);
+                if (cB_Guargar.getSelectedItem().equals(t.getUniverse().toString())) {
+                    Object[] row = {t.getNombre()};
+                    DefaultTableModel modelo = (DefaultTableModel) JT_GuardaryCargar.getModel();
+                    modelo.addRow(row);
+                    JT_GuardaryCargar.setModel(modelo);
                 }
             }
 
@@ -1615,9 +1716,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JProgressBar jProgressBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JProgressBar pendejo;
     private javax.swing.JSpinner spinner_SerVivoPoder;
     private javax.swing.JSpinner spinner_SerVivoPodermod;
     private javax.swing.JTextField textfield_SerVivoAnio;
